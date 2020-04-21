@@ -1,5 +1,6 @@
 package org.example.springcloud.service;
 
+import org.example.springcloud.config.RestTemplateConfiguration;
 import org.example.springcloud.entities.Payment;
 import org.example.springcloud.entities.ResponseResult;
 import org.springframework.http.HttpEntity;
@@ -27,11 +28,13 @@ public class OrderServiceImpl implements OrderService {
     public ResponseResult<Payment> createPayment(String serial) {
         MultiValueMap<String, Object> multiValueMap = new LinkedMultiValueMap<>();
         multiValueMap.add("serial", serial);
-        return restTemplate.postForObject("http://localhost:8001/payment/create", multiValueMap, ResponseResult.class);
+        return restTemplate.postForObject(String.format("http://%s/payment/create", RestTemplateConfiguration.PAYMENT_SERVICE_NAME),
+            multiValueMap, ResponseResult.class);
     }
 
     @Override
     public ResponseResult<List<Payment>> getAllPayments() {
-        return restTemplate.getForObject("http://localhost:8001/payment/get", ResponseResult.class);
+        return restTemplate.getForObject(String.format("http://%s/payment/get", RestTemplateConfiguration.PAYMENT_SERVICE_NAME),
+            ResponseResult.class);
     }
 }

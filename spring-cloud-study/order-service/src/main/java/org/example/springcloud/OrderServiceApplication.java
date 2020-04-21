@@ -12,14 +12,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @author ruanwenjun
- * @create 2020/04/18/ 6:16 PM
+ * @create 2020/04/19/ 8:48 PM
  */
 @SpringBootApplication
 @EnableSwagger2
 @EnableEurekaClient
-public class Payment8001Application {
+public class OrderServiceApplication {
     public static void main(String[] args) {
-        SpringApplication.run(Payment8001Application.class, args);
+        SpringApplication.run(OrderServiceApplication.class, args);
     }
 
     @Bean
@@ -30,6 +30,4 @@ public class Payment8001Application {
             .paths(PathSelectors.any())
             .build();
     }
-
-
 }
