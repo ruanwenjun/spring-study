@@ -18,6 +18,8 @@ public class GlobalExceptionHandler<T> {
     @ResponseBody
     @ExceptionHandler(Exception.class)
     public ResponseResult<T> exceptionHandler(HttpServletRequest req, NullPointerException e) {
-        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR, null, null);
+        return new ResponseResult<>(HttpStatus.INTERNAL_SERVER_ERROR.value(),
+            HttpStatus.INTERNAL_SERVER_ERROR.name(),
+            null);
     }
 }

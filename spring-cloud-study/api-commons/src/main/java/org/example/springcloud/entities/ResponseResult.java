@@ -15,15 +15,19 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResponseResult<T> implements Serializable {
-    private HttpStatus httpStatus;
+    private int responseCode;
     private String message;
     private T data;
 
     public static <T> ResponseResult<T> buildSuccessResult() {
-        return new ResponseResult<>(HttpStatus.OK, null, null);
+        return buildSuccessResult(null);
     }
 
     public static <T> ResponseResult<T> buildSuccessResult(T data) {
-        return new ResponseResult<>(HttpStatus.OK, null, data);
+        return buildResponseResult(HttpStatus.OK, data);
+    }
+
+    public static <T> ResponseResult<T> buildResponseResult(HttpStatus httpStatus, T data) {
+        return new ResponseResult<>(httpStatus.value(), httpStatus.name(), data);
     }
 }
