@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class RestTemplateConfiguration {
 
-    public static final String PAYMENT_SERVICE_NAME = "PAYMENT-SERVICE";
+    public static final String PAYMENT_SERVICE_NAME = "http://PAYMENT-SERVICE";
 
     @Bean
     @LoadBalanced

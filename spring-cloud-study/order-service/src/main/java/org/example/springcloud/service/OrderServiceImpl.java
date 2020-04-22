@@ -28,13 +28,13 @@ public class OrderServiceImpl implements OrderService {
     public ResponseResult<Payment> createPayment(String serial) {
         MultiValueMap<String, Object> multiValueMap = new LinkedMultiValueMap<>();
         multiValueMap.add("serial", serial);
-        return restTemplate.postForObject(String.format("http://%s/payment/create", RestTemplateConfiguration.PAYMENT_SERVICE_NAME),
+        return restTemplate.postForObject(String.format("%s/payment/create", RestTemplateConfiguration.PAYMENT_SERVICE_NAME),
             multiValueMap, ResponseResult.class);
     }
 
     @Override
     public ResponseResult<List<Payment>> getAllPayments() {
-        return restTemplate.getForObject(String.format("http://%s/payment/get", RestTemplateConfiguration.PAYMENT_SERVICE_NAME),
+        return restTemplate.getForObject(String.format("%s/payment/get", RestTemplateConfiguration.PAYMENT_SERVICE_NAME),
             ResponseResult.class);
     }
 }
