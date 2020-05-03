@@ -11,7 +11,7 @@ import java.util.List;
  * @author ruanwenjun
  * @create 2020/04/27/ 3:22 PM
  */
-@FeignClient(value = "PAYMENT-SERVICE")
+@FeignClient(value = "PAYMENT-SERVICE", fallback = PaymentControllerClientFallback.class)
 public interface PaymentControllerClient {
 
 

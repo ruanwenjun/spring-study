@@ -30,4 +30,8 @@ public class ResponseResult<T> implements Serializable {
     public static <T> ResponseResult<T> buildResponseResult(HttpStatus httpStatus, T data) {
         return new ResponseResult<>(httpStatus.value(), httpStatus.name(), data);
     }
+
+    public static <T> ResponseResult<T> buildResponseResult(HttpStatus httpStatus, String message, T data) {
+        return new ResponseResult<>(httpStatus.value(), message, data);
+    }
 }

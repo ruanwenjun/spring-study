@@ -14,3 +14,7 @@ eureka:
   instance:
     instance-id: order-feign-client
     prefer-ip-address: true
+
+feign:
+  hystrix:
+    enabled: true
