@@ -15,6 +15,7 @@
         <module>api-commons</module>
         <module>eureka-server</module>
         <module>order-feign-client</module>
+        <module>gateway-server</module>
     </modules>
 
     <properties>
