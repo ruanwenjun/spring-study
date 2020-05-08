@@ -2,7 +2,6 @@ package org.example.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -13,10 +12,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 /**
  * @author ruanwenjun
  * @create 2020/04/18/ 6:16 PM
+ * 2.x版本之后已经不需要@EnableEurekaClient注解了，会自动进行服务注册
  */
 @SpringBootApplication
 @EnableSwagger2
-@EnableEurekaClient
 public class PaymentServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(PaymentServiceApplication.class, args);
