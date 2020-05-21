@@ -1,0 +1,13 @@
+dependencies {
+    compile project(':order-spi')
+    compile 'org.springframework:spring-context'
+    compile('org.apache.dubbo:dubbo') {
+        exclude module: 'dubbo-common'
+    }
+    compile('org.apache.dubbo:dubbo-registry-zookeeper') {
+        exclude module: 'dubbo-common'
+        exclude module: 'dubbo-remoting-api'
+    }
+}
+
+

@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: springboot-order-service
+
+dubbo:
+  registry:
+    address: '127.0.0.1:2181'
+    protocol: 'zookeeper'
+  protocol:
+    port: 20880
+    name: dubbo

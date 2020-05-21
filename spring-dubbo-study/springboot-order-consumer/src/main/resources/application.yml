@@ -1,0 +1,12 @@
+
+
+spring:
+  application:
+    name: springboot-order-consumer
+
+dubbo:
+  registry:
+    address: '127.0.0.1:2181'
+    protocol: 'zookeeper'
+server:
+  port: 8001
