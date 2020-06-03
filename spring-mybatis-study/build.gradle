@@ -1,0 +1,40 @@
+plugins {
+    id 'io.spring.dependency-management' version '1.0.1.RELEASE'
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+    group 'org.example'
+    version '1.0-SNAPSHOT'
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+        }
+        mavenCentral()
+    }
+
+    ext {
+        mysqlConnectorVersion = '8.0.16'
+        mybatisVersion = '3.4.6'
+        junitVersion = '4.12'
+    }
+
+    dependencies {
+        compile group: 'org.apache.logging.log4j', name: 'log4j-api'
+        compile group: 'org.apache.logging.log4j', name: 'log4j-core'
+        compile group: 'org.mybatis', name: 'mybatis', version: "$mybatisVersion"
+        compile group: 'mysql', name: 'mysql-connector-java', version: "$mysqlConnectorVersion"
+        testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom 'org.apache.logging.log4j:log4j-bom:2.13.3'
+        }
+    }
+}
+

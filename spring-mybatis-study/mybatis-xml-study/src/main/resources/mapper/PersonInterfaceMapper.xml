@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mapper.PersonMapper">
+
+
+    <insert id="addPerson" parameterType="org.example.bean.Person" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into person(name,email,age) values (#{name}, #{email}, #{age})
+    </insert>
+
+    <delete id="deletePersonById" parameterType="org.example.bean.Person">
+        delete from person where id = #{id}
+    </delete>
+
+    <select id="getPersonById" resultType="org.example.bean.Person">
+        select * from person where id = #{id}
+    </select>
+
+    <select id="getPersonByNameAndEmail" resultType="org.example.bean.Person">
+        select * from person where name = #{name} and email = #{email} limit 1
+    </select>
+
+    <update id="updatePersonById" parameterType="org.example.bean.Person">
+        update person
+        set name= #{name}, email = #{email}, age = #{age}
+        where id = #{id}
+    </update>
+</mapper>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.mapper.PersonMapperTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-03T07:35:42" hostname="wenjun-macbook.local" time="0.616">
+  <properties/>
+  <testcase name="testGetPersonByNameAndEmail" classname="org.example.mapper.PersonMapperTest" time="0.616"/>
+  <system-out><![CDATA[15:35:42.667 [Test worker] INFO  org.example.mapper.PersonMapperTest - person:Person{id=4, name='zhangsan', age=1, email='zhangsan@gmail.com'}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

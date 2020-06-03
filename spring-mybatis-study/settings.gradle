@@ -1,0 +1,3 @@
+rootProject.name = 'spring-mybatis-study'
+include 'mybatis-xml-study'
+

@@ -1,0 +1,1 @@
+è15:35:42.667 [Test worker] INFO  org.example.mapper.PersonMapperTest - person:Person{id=4, name='zhangsan', age=1, email='zhangsan@gmail.com'}
